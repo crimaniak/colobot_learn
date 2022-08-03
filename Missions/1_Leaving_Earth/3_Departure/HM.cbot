@@ -1,0 +1,23 @@
+extern void object::HM()
+{
+	object battery=radar(PowerCell);
+	object zavod=radar(BotFactory);
+	object thanos=radar(Titanium);
+	object yf=radar(YellowFlag);
+	object science=radar(ResearchCenter);
+	object tonk=radar(TrackedGrabber);
+	object secondb=radar(PowerCell, 360, 360, 0, 15);
+	goto(battery.position);
+	grab();
+	goto(science.position);
+	drop();
+	goto(thanos.position);
+	grab();
+	goto(zavod.position);
+	drop();
+	goto(secondb.position);
+	grab();
+	goto(tonk.position);
+	drop();
+	goto(yf.position);
+}

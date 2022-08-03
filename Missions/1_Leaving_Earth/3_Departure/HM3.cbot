@@ -1,0 +1,11 @@
+extern void object::MorePower()
+{
+	object battery=radar(PowerCell);
+	object tonk=radar(TrackedGrabber);
+	object yf=radar(YellowFlag);
+	goto(battery.position);
+	grab();
+	goto(tonk.position);
+	drop();
+	goto(yf.position);
+}
