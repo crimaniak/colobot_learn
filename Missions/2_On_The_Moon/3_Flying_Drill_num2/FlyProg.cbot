@@ -1,0 +1,12 @@
+extern void object::Fly()
+{
+	int x=0;
+	
+	do {
+		object targ=radar(Target2);
+		goto(targ.position);
+		x=x+1;
+	}
+	while (x==11);
+	
+}
