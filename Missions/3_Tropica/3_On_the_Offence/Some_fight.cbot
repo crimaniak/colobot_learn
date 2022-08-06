@@ -1,0 +1,17 @@
+extern void object::New()
+{
+	point bot_position=this.position;
+	object enemy=radar(AlienAnt);
+	if(enemy!=null){
+		float angle = direction(enemy.position);
+		turn(angle);
+		float dx=enemy.position.x - this.position.x;
+		float dy=enemy.position.y - this.position.y;
+		float dz=enemy.position.z - this.position.z;
+		float D=sqrt((dx*dx)+(dy*dy));
+		float V_angle=atan(dz/D);
+		aim(V_angle, direction(enemy.position));
+		
+		fire(0.1);
+	}
+}
